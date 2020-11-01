@@ -4,10 +4,10 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 import Header from './components/Header';
 import GlobalStyles from './lib/globalStyles';
+import Main from './pages/Main';
 
 const AppBody = styled.div`
   width: 1000px;
@@ -22,11 +22,10 @@ const App = () => {
         <Header />
         <Switch>
           <Route exact path="/">
-            <p>Первый</p>
-            <Link to="/ab">Переход</Link>
+            <Main />
           </Route>
-          <Route path="/ab">
-            <p>Второй</p>
+          <Route path="/pay/:operator">
+            <p>Оплата</p>
           </Route>
         </Switch>
       </AppBody>
