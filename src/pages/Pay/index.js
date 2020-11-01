@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import findOperator from '../../lib/findOperator';
+import Modal from '../../components/Modal';
 import * as Styles from './styles';
 
 const Pay = () => {
   const { operator } = useParams();
   const [ operatorInfo ] = findOperator(operator);
+  const [ isOpenModal, setIsOpenModal ] = useState(false);
   return (
     <>
       <Styles.BackButton>
@@ -30,9 +32,19 @@ const Pay = () => {
           </label>
         </Styles.Inputs>
         <Styles.Inputs>
-          <Styles.SumbitButton type="submit" value="Оплатить" />
+          <Styles.SumbitButton
+            type="submit"
+            value="Оплатить"
+            onClick={(e) => {
+              e.preventDefault();
+              setIsOpenModal(true);
+            }}
+          />
         </Styles.Inputs>
       </form>
+      {
+        isOpenModal ? <Modal /> : <></>
+      }
     </>
   );
 }

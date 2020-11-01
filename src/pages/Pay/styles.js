@@ -44,6 +44,7 @@ const SumbitButton = styled.input`
   background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
   border: 1px solid #84fab0;
   border-radius: 10px;
+  cursor: pointer;
 `;
 
 export {
