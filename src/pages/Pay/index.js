@@ -8,6 +8,7 @@ const Pay = () => {
   const { operator } = useParams();
   const [ operatorInfo ] = findOperator(operator);
   const [ isOpenModal, setIsOpenModal ] = useState(false);
+  const [ isModalLoading, setIsModalLoading ] = useState(false);
   return (
     <>
       <Styles.BackButton>
@@ -38,12 +39,13 @@ const Pay = () => {
             onClick={(e) => {
               e.preventDefault();
               setIsOpenModal(true);
+              setIsModalLoading(true);
             }}
           />
         </Styles.Inputs>
       </form>
       {
-        isOpenModal ? <Modal /> : <></>
+        isOpenModal ? <Modal isModalLoading={isModalLoading} /> : <></>
       }
     </>
   );
