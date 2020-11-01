@@ -14,23 +14,21 @@ const AppBody = styled.div`
   margin: 0 auto;
 `;
 
-const App = () => {
-  return (
-    <Router>
-      <GlobalStyles />
-      <AppBody>
-        <Header />
-        <Switch>
-          <Route exact path="/">
-            <Main />
-          </Route>
-          <Route path="/pay/:operator">
-            <p>Оплата</p>
-          </Route>
-        </Switch>
-      </AppBody>
-    </Router>
-  );
-}
+const App = () => (
+  <Router>
+    <GlobalStyles />
+    <AppBody>
+      <Header />
+      <Switch>
+        <Route exact path="/">
+          <Main />
+        </Route>
+        <Route path="/pay/:operator">
+          <p>Оплата</p>
+        </Route>
+      </Switch>
+    </AppBody>
+  </Router>
+);
 
 export default App;
