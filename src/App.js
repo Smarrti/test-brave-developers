@@ -8,6 +8,7 @@ import {
 import Header from './components/Header';
 import GlobalStyles from './lib/globalStyles';
 import Main from './pages/Main';
+import Pay from './pages/Pay';
 
 const AppBody = styled.div`
   width: 1000px;
@@ -24,7 +25,7 @@ const App = () => (
           <Main />
         </Route>
         <Route path="/pay/:operator">
-          <p>Оплата</p>
+          <Pay />
         </Route>
       </Switch>
     </AppBody>
