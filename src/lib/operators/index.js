@@ -7,22 +7,22 @@ const operators = [{
     name: 'МТС',
     url: 'mts',
     photo: mts,
-    firstColor: '#e30510',
-    secondColor: '#c7040e',
+    firstColor: '#ed2630',
+    secondColor: '#b5141c',
   }, {
     id: 2,
     name: 'Билайн',
     url: 'beeline',
     photo: beeline,
-    firstColor: '#ffdb01',
-    secondColor: '#f2d000'
+    firstColor: '#ffd001',
+    secondColor: '#e6c32c'
   }, {
     id: 3,
     name: 'Мегафон',
     url: 'megafon',
     photo: megafon,
-    firstColor: '#00b856',
-    secondColor: '#00a84f'
+    firstColor: '#2dba49',
+    secondColor: '#0da32b'
   }
 ]
 
