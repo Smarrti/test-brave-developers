@@ -21,7 +21,12 @@ const OpeatorCard = styled.div`
     ${props => props.firstColor}, 
     ${props => props.secondColor});
   border-radius: 20px;
-  box-shadow: 0 6px 18px 0 rgba(31,34,41,.18);
+  box-shadow: 0 6px 18px 0 rgba(31, 34, 41, 0.18);
+  transition: all 0.3s ease;
+  &:hover {
+    transform: translateY(-15px);
+    filter: brightness(120%);
+  }
 `;
 
 const OperatorImage = styled.img`
