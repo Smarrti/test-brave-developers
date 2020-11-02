@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import findOperator from '../../lib/findOperator';
+import validateForm from '../../lib/validateForm';
 import Modal from '../../components/Modal';
 import * as Styles from './styles';
 
@@ -9,6 +10,7 @@ const Pay = () => {
   const [ operatorInfo ] = findOperator(operator);
   const [ isOpenModal, setIsOpenModal ] = useState(false);
   const [ isModalLoading, setIsModalLoading ] = useState(false);
+  const [ contentModal, setContentModal ] = useState(<div></div>);
   return (
     <>
       <Styles.BackButton>
@@ -38,14 +40,16 @@ const Pay = () => {
             value="Оплатить"
             onClick={(e) => {
               e.preventDefault();
-              setIsOpenModal(true);
-              setIsModalLoading(true);
+              if (validateForm('895016163788', '2369', setIsOpenModal, setContentModal)) {
+                setIsOpenModal(true);
+                setIsModalLoading(true);
+              }
             }}
           />
         </Styles.Inputs>
       </form>
       {
-        isOpenModal ? <Modal isModalLoading={isModalLoading} /> : <></>
+        isOpenModal ? <Modal isModalLoading={isModalLoading} contentModal={contentModal} /> : <></>
       }
     </>
   );
