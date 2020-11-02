@@ -11,6 +11,8 @@ const Pay = () => {
   const [ isOpenModal, setIsOpenModal ] = useState(false);
   const [ isModalLoading, setIsModalLoading ] = useState(false);
   const [ contentModal, setContentModal ] = useState(<div></div>);
+  const [ phoneInput, setPhoneInput ] = useState();
+  const [ moneyInput, setMoneyInput ] = useState();
   return (
     <>
       <Styles.BackButton>
@@ -27,11 +29,22 @@ const Pay = () => {
         <Styles.Inputs>
           <label>
             <Styles.InputTitle>Введите номер телефона</Styles.InputTitle>
-            <Styles.Input type="tel" pattern="89[0-9]{9}" />
+            <Styles.Input
+              type="tel"
+              pattern="89[0-9]{9}"
+              value={phoneInput}
+              onChange={(e) => setPhoneInput(e.target.value)}
+            />
           </label>
           <label>
             <Styles.InputTitle>Введите сумму оплаты</Styles.InputTitle>
-            <Styles.Input type="number" min="1" max="1000" />
+            <Styles.Input
+              type="number"
+              min="1"
+              max="1000"
+              value={moneyInput}
+              onChange={(e) => setMoneyInput(e.target.value)}
+            />
           </label>
         </Styles.Inputs>
         <Styles.Inputs>
@@ -40,7 +53,7 @@ const Pay = () => {
             value="Оплатить"
             onClick={(e) => {
               e.preventDefault();
-              if (validateForm('895016163788', '2369', setIsOpenModal, setContentModal)) {
+              if (validateForm(phoneInput, moneyInput, setIsOpenModal, setContentModal)) {
                 setIsOpenModal(true);
                 setIsModalLoading(true);
               }

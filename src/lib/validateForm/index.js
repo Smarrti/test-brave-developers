@@ -1,7 +1,7 @@
 import ContentModal from '../../components/ContentModal';
 
 const validateForm = (phone, money, openModal, contentModal) => {
-  if (phone.match('89[0-9]{9}') === null && phone.length === 11) {
+  if (phone.match('89[0-9]{9}') === null || phone.length !== 11) {
     openModal(true);
     contentModal(<ContentModal
       type="Bad"
