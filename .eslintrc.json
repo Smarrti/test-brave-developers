@@ -21,10 +21,8 @@
       "react"
   ],
   "rules": {
-      "react/no-unused-styles": 2,
-      "react/split-platform-components": 2,
-      "react/no-inline-styles": 2,
-      "react/no-color-literals": 2,
-      "react/no-raw-text": 2,
+    "jsx-a11y/label-has-associated-control": "off",
+    "no-console": "off",
+    "react/jsx-filename-extension": "off"
   }
 }

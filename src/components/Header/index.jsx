@@ -6,7 +6,7 @@ const H1 = styled.h1`
   @media (max-width: 580px) {
     text-align: center;
   }
-`
+`;
 
 const Header = () => (
   <H1>Терминал оплаты</H1>

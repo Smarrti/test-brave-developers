@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
 import * as Styles from './styles';
 import good from '../../assets/ok.png';
@@ -19,13 +20,19 @@ const ContentModal = ({ type, message, setIsOpenModal }) => {
             console.log('Go home');
           } else {
             setIsOpenModal(false);
-          }      
+          }
         }}
       >
         Закрыть
       </Styles.Button>
     </Styles.Content>
-  )
+  );
+};
+
+ContentModal.propTypes = {
+  type: PropTypes.string.isRequired,
+  message: PropTypes.string.isRequired,
+  setIsOpenModal: PropTypes.func.isRequired,
 };
 
 export default ContentModal;

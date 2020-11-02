@@ -1,3 +1,4 @@
+import React from 'react';
 import ContentModal from '../../components/ContentModal';
 
 const validateForm = (phone, money, openModal, contentModal) => {
@@ -7,7 +8,7 @@ const validateForm = (phone, money, openModal, contentModal) => {
       type="Bad"
       message="Не корректный номер телефона. Номер телефона должен выглядить 89991236547"
       setIsOpenModal={openModal}
-    />)
+    />);
     return false;
   }
   if (!(money >= 1 && money <= 1000)) {
@@ -16,10 +17,10 @@ const validateForm = (phone, money, openModal, contentModal) => {
       type="Bad"
       message="Не корректная сумма. Сумма должна быть от 1 до 1000"
       setIsOpenModal={openModal}
-    />)
+    />);
     return false;
   }
   return true;
-}
+};
 
 export default validateForm;

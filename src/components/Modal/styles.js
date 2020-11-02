@@ -7,10 +7,10 @@ const Background = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  width: ${(props) => props.isOpen ? '100%' : '0'};
-  height: ${(props) => props.isOpen ? '100%' : '0'};
+  width: ${(props) => (props.isOpen ? '100%' : '0')};
+  height: ${(props) => (props.isOpen ? '100%' : '0')};
   background: rgba(0, 0, 0, 0.5);
-  visibility: ${(props) => props.isOpen ? 'visible' : 'hidden'};
+  visibility: ${(props) => (props.isOpen ? 'visible' : 'hidden')};
   transition: all 0.3s ease;
 `;
 

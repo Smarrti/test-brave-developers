@@ -58,5 +58,5 @@ export {
   Inputs,
   InputTitle,
   Input,
-  SumbitButton
+  SumbitButton,
 };

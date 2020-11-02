@@ -1,7 +1,5 @@
-import operators from "../operators";
+import operators from '../operators';
 
-const findOperator = (url) => {
-  return operators.filter((operator) => operator.url === url);
-}
+const findOperator = (url) => operators.filter((operator) => operator.url === url);
 
 export default findOperator;

@@ -4,7 +4,7 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-} from "react-router-dom";
+} from 'react-router-dom';
 import Header from './components/Header';
 import GlobalStyles from './lib/globalStyles';
 import Main from './pages/Main';

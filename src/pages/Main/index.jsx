@@ -9,7 +9,7 @@ const Main = () => (
     <Styles.OperatorsList>
       {
         operators.map((operator) => (
-          <Link 
+          <Link
             to={`/pay/${operator.url}`}
             key={operator.id}
           >

@@ -2,7 +2,9 @@ import styled from 'styled-components';
 
 const MainTitle = styled.h2`
   font-size: 2.4rem;
-  text-align: center;
+  @media (max-width: 580px) {
+    text-align: center;
+  }
 `;
 
 const OperatorsList = styled.div`
@@ -22,8 +24,9 @@ const OpeatorCard = styled.div`
   padding: 20px;
   background: linear-gradient(
     90deg, 
-    ${props => props.firstColor}, 
-    ${props => props.secondColor});
+    ${(props) => props.firstColor}, 
+    ${(props) => props.secondColor}
+  );
   border-radius: 20px;
   box-shadow: 0 6px 18px 0 rgba(31, 34, 41, 0.18);
   transition: all 0.3s ease;
@@ -45,4 +48,6 @@ const OperatorName = styled.p`
   margin-bottom: 10px;
 `;
 
-export { MainTitle, OperatorsList, OpeatorCard, OperatorImage, OperatorName };
+export {
+  MainTitle, OperatorsList, OpeatorCard, OperatorImage, OperatorName,
+};

@@ -9,12 +9,12 @@ import * as Styles from './styles';
 
 const Pay = () => {
   const { operator } = useParams();
-  const [ operatorInfo ] = findOperator(operator);
-  const [ isOpenModal, setIsOpenModal ] = useState(false);
-  const [ isModalLoading, setIsModalLoading ] = useState(false);
-  const [ contentModal, setContentModal ] = useState(<div></div>);
-  const [ phoneInput, setPhoneInput ] = useState('');
-  const [ moneyInput, setMoneyInput ] = useState('');
+  const [operatorInfo] = findOperator(operator);
+  const [isOpenModal, setIsOpenModal] = useState(false);
+  const [isModalLoading, setIsModalLoading] = useState(false);
+  const [contentModal, setContentModal] = useState(<div />);
+  const [phoneInput, setPhoneInput] = useState('');
+  const [moneyInput, setMoneyInput] = useState('');
   return (
     <>
       <Styles.BackButton>
@@ -25,7 +25,10 @@ const Pay = () => {
           src={operatorInfo.photo}
           alt={operatorInfo.name}
         />
-        <Styles.H2>Оплата в {operatorInfo.name}</Styles.H2>
+        <Styles.H2>
+          Оплата в
+          {operatorInfo.name}
+        </Styles.H2>
       </Styles.OperatorTitle>
       <form>
         <Styles.Inputs>
@@ -59,17 +62,18 @@ const Pay = () => {
                 setIsOpenModal(true);
                 setIsModalLoading(true);
                 if (paying(operatorInfo.name, phoneInput, moneyInput)) {
-                  setContentModal(<СontentModal type="Good"
+                  setContentModal(<СontentModal
+                    type="Good"
                     message="Оплата успешно прошла"
                     setIsOpenModal={setIsOpenModal}
                   />);
                 } else {
-                  setContentModal(<СontentModal 
+                  setContentModal(<СontentModal
                     type="Bad"
                     message="Произошла ошибка"
                     setIsOpenModal={setIsOpenModal}
                   />);
-                }      
+                }
                 setIsModalLoading(false);
               }
             }}
@@ -83,6 +87,6 @@ const Pay = () => {
       />
     </>
   );
-}
+};
 
 export default Pay;
