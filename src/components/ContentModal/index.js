@@ -1,9 +1,11 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import * as Styles from './styles';
 import good from '../../assets/ok.png';
 import bad from '../../assets/bad.png';
 
 const ContentModal = ({ type, message, setIsOpenModal }) => {
+  const history = useHistory();
   return (
     <Styles.Content>
       {
@@ -12,7 +14,11 @@ const ContentModal = ({ type, message, setIsOpenModal }) => {
       <Styles.Text>{message}</Styles.Text>
       <Styles.Button
         onClick={() => {
-          setIsOpenModal(false);
+          if (type === 'Good') {
+            history.push('/');
+          } else {
+            setIsOpenModal(false)
+          }      
         }}
       >
         Закрыть
