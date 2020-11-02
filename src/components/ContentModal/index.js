@@ -1,22 +1,23 @@
 import React from 'react';
+import * as Styles from './styles';
 import good from '../../assets/ok.png';
 import bad from '../../assets/bad.png';
 
 const ContentModal = ({ type, message, setIsOpenModal }) => {
   return (
-    <div>
+    <Styles.Content>
       {
         type === 'Good' ? <img src={good} alt="Good" /> : <img src={bad} alt="Bad" />
       }
-      <p>{message}</p>
-      <button
+      <Styles.Text>{message}</Styles.Text>
+      <Styles.Button
         onClick={() => {
           setIsOpenModal(false);
         }}
       >
         Закрыть
-      </button>
-    </div>
+      </Styles.Button>
+    </Styles.Content>
   )
 };
 
