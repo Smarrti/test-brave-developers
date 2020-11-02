@@ -23,6 +23,9 @@ const Inputs = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  @media (max-width: 710px) {
+    justify-content: center;
+  }
 `;
 
 const InputTitle = styled.p`

@@ -21,6 +21,10 @@ const Modal = styled.div`
   width: 300px;
   height: 500px;
   background: white;
+  @media (max-width: 420px) {
+    width: 100%;
+    height: 100%;
+  }
 `;
 
 export { Background, Modal };

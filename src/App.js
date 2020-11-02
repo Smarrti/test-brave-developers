@@ -13,6 +13,9 @@ import Pay from './pages/Pay';
 const AppBody = styled.div`
   width: 1000px;
   margin: 0 auto;
+  @media (max-width: 1010px) {
+    width: 100%;
+  }
 `;
 
 const App = () => (

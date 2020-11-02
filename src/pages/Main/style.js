@@ -2,12 +2,16 @@ import styled from 'styled-components';
 
 const MainTitle = styled.h2`
   font-size: 2.4rem;
+  text-align: center;
 `;
 
 const OperatorsList = styled.div`
   display: grid;
   grid-template-columns: 50% 50%;
   grid-row-gap: 30px;
+  @media (max-width: 1010px) {
+    grid-template-columns: 100%;
+  }
 `;
 
 const OpeatorCard = styled.div`

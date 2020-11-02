@@ -5,8 +5,11 @@ const GlobalStyles = createGlobalStyle`
     font-family: 'Montserrat', sans-serif;
   };
 
-  body {
-    font-size: 10px;
+  html {
+    font-size: 15px;
+    @media (max-width: 580px) {
+      font-size: 10px;
+    }
   }
 
   a {
