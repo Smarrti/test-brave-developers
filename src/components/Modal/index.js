@@ -3,9 +3,6 @@ import Spinner from '../Spinner';
 import * as Styles from './styles';
 
 const Modal = ({ isOpen, isModalLoading, contentModal }) => {
-  // if (!isOpen) {
-  //   return <></>;
-  // }
   return (
     <Styles.Background
       isOpen={isOpen}
