@@ -11,8 +11,8 @@ const Pay = () => {
   const [ isOpenModal, setIsOpenModal ] = useState(false);
   const [ isModalLoading, setIsModalLoading ] = useState(false);
   const [ contentModal, setContentModal ] = useState(<div></div>);
-  const [ phoneInput, setPhoneInput ] = useState();
-  const [ moneyInput, setMoneyInput ] = useState();
+  const [ phoneInput, setPhoneInput ] = useState('');
+  const [ moneyInput, setMoneyInput ] = useState('');
   return (
     <>
       <Styles.BackButton>
@@ -61,9 +61,11 @@ const Pay = () => {
           />
         </Styles.Inputs>
       </form>
-      {
-        isOpenModal ? <Modal isModalLoading={isModalLoading} contentModal={contentModal} /> : <></>
-      }
+      <Modal
+        isOpen={isOpenModal}
+        isModalLoading={isModalLoading}
+        contentModal={contentModal}
+      />
     </>
   );
 }
