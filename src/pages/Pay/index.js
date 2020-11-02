@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import findOperator from '../../lib/findOperator';
 import validateForm from '../../lib/validateForm';
+import paying from '../../lib/paying';
 import Modal from '../../components/Modal';
+import СontentModal from '../../components/ContentModal';
 import * as Styles from './styles';
 
 const Pay = () => {
@@ -56,6 +58,19 @@ const Pay = () => {
               if (validateForm(phoneInput, moneyInput, setIsOpenModal, setContentModal)) {
                 setIsOpenModal(true);
                 setIsModalLoading(true);
+                if (paying(operatorInfo.name, phoneInput, moneyInput)) {
+                  setContentModal(<СontentModal type="Good"
+                    message="Оплата успешно прошла"
+                    setIsOpenModal={setIsOpenModal}
+                  />);
+                } else {
+                  setContentModal(<СontentModal 
+                    type="Bad"
+                    message="Произошла ошибка"
+                    setIsOpenModal={setIsOpenModal}
+                  />);
+                }      
+                setIsModalLoading(false);
               }
             }}
           />
