@@ -16,8 +16,9 @@ const ContentModal = ({ type, message, setIsOpenModal }) => {
         onClick={() => {
           if (type === 'Good') {
             history.push('/');
+            console.log('Go home');
           } else {
-            setIsOpenModal(false)
+            setIsOpenModal(false);
           }      
         }}
       >
